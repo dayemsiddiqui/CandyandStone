@@ -1,0 +1,2 @@
+-Decreasing probability of similar colours by putting range to (255)
+-Could be further lessened by using HSB
