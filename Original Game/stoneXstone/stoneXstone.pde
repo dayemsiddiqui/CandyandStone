@@ -13,11 +13,11 @@ void setup() {
   eye=loadImage("data/eye.png");
   Stones=new ArrayList();
   lvl = new Level();
-<<<<<<< HEAD
+
   lvl.loadImages(); //loads images of themes
-=======
+
    menu = new Menu();
->>>>>>> origin/master
+
 }
 void draw() {
   
