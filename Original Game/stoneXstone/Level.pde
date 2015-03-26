@@ -1,19 +1,42 @@
 class Level {
   int xdimension=32;
   int ydimension=20;
-  int NumCols = 2;
+  int NumCols = 3;
   int curX, curY, target;
   int lv=0; 
   boolean playFlag, winFlag;
-
+  PImage[][] pic = new PImage[2][4];
+  int change = 0; //for cycling through the theme;
   Level() {
 
-     imageMode(CORNER);
-     ellipseMode(CORNER);
+    imageMode(CORNER);
+    ellipseMode(CORNER);
     setColor();
     setStone();
     playFlag=false;
     winFlag=false;
+  }
+  void loadImages() {
+    String k=""; //holds folder name to path
+    //the loops fills the 2d array with images
+    for (int i = 0; i < pic.length; i++) {
+      if (i == 0) k = "sweet food";
+      if (i == 1) k = "animals vec";
+      for (int j =0; j< pic[i].length; j++) {
+        pic[i][j] = loadImage("data/"+k+"/"+(j+1)+".png");
+        println(i +"  " +j);
+      }
+    }
+  }
+  void setTheme() {
+    change++;
+    if (change>1){ //number is the maximum themes - 1 
+      change=0;
+    }
+    for (int i= 0; i<Stones.size (); i++) {
+      Stone st = (Stone)Stones.get(i);    
+      st.setTheme(change);
+    }
   }
 
   void startGame() {
@@ -119,6 +142,7 @@ class Level {
   }
 
   void click() {
+    setTheme();
     if (playFlag) {
       if (!winFlag) {
         if (target != -1) {
