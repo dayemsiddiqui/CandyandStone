@@ -28,6 +28,7 @@ class Stone {
   } 
 
 
+<<<<<<< HEAD
 
   boolean checkSame(int id) {
     boolean same=false;
@@ -42,6 +43,20 @@ class Stone {
 
           oth.checkSame(i);
         }
+=======
+boolean checkSame(int id){
+  boolean same=false;
+  for(int i= other.size()-1;i>=0;i--){
+          Stone oth=(Stone) other.get(i);
+    if((i!=id)&&(!oth.death)){
+      if((c==oth.c)&&(((abs(x-oth.x)==1)&&(y==oth.y))||((abs(y-oth.y)==1)&&(x==oth.x)))){
+        death=true;   
+        oth.death=true;
+        same=true;
+          p.score+=1;        
+              
+        oth.checkSame(i);
+>>>>>>> origin/master
       }
     }
     return same;
