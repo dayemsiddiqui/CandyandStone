@@ -21,14 +21,26 @@ class Player{
     void searchName(){
     load = loadStrings("leaderboard.txt");
     for(int i=0;i<load.length;i+=2){
-    if(load[i].equals(name)){
+    if(load[i].trim().equals(name)){
     println("Found one");
+    p.name = load[i].trim();
+    p.score = Integer.parseInt(load[i+1].trim());
     return;
     }
     }
     println("Not found");
     }
-
-
+    
+    //=====Farigh Functions============//
+    void loadScore(){
+    load = loadStrings("leaderboard.txt");
+    
+    p.score = Integer.parseInt(load[0]);
+    }
+    void saveScore(){
+    load[0] = Integer.toString(p.score);
+    saveStrings("leaderboard.txt", load);
+    }
+  //=======================================
 
 }

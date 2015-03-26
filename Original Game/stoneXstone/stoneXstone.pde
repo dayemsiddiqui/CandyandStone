@@ -11,7 +11,8 @@ void setup() {
 void draw() {
    menu.show();
 }
-void mousePressed() {
+void mouseClicked() {
   lvl.click();
+  menu.clickEvent();
 }
 
