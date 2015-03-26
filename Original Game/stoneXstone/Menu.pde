@@ -6,15 +6,23 @@ class Menu {
 
   Menu() {
     //======================Startup===========================/    
+
+
+
+
+
+    //============================================
     size(640, 460); 
     noStroke(); 
     smooth();
+
+
     lvl = new Level();
     main = new MainScreen();
     universal = main;
     lvl.loadImages(); //loads images of themes   
-     p = new Player();
-     //============================================
+   
+    p = new Player();
   }
 
   void show() {
@@ -25,8 +33,6 @@ class Menu {
     
     
 }
- 
- //This function checks that which mouse was clicked in a specified region or not
   
   boolean mouseCheck(float x1, float y1, float x2, float y2) {
     if (mouseX >= x1 && mouseX <= x2 && mouseY>=y1 && mouseY<=y2) {
@@ -42,17 +48,12 @@ class Menu {
   if (mouseCheck(360, 210, 610, 230)){
           temp = 1;
     }
-    
-    
-  //=========================//  
     if(temp == 0){
     universal = main;   
     }
     if(temp == 1){
     universal = lvl;
     }
-    
-    //======================//
   
   }
 }
