@@ -39,7 +39,7 @@ boolean checkSame(int id){
         death=true;   
         oth.death=true;
         same=true;
-          score+=1;        
+          p.score+=1;        
               
         oth.checkSame(i);
       }

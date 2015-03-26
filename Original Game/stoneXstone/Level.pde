@@ -66,7 +66,7 @@ class Level {
       line(0, 361, width, 361);
       fill(200);
       text("Score:", 50, 400);
-      text(score, 140, 400);
+      text(p.score, 140, 400);
       text("Level", 250, 400);
       text(lv, 340, 400);
 

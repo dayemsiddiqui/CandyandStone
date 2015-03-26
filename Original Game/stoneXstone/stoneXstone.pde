@@ -1,4 +1,5 @@
-int score;
+Player p = new Player();
+Menu menu;
 color cols[];
 ArrayList Stones;
 PImage eye;
@@ -12,9 +13,12 @@ void setup() {
   eye=loadImage("data/eye.png");
   Stones=new ArrayList();
   lvl = new Level();
+   menu = new Menu();
 }
 void draw() {
-  lvl.startGame();
+  
+  
+  menu.show();
 }
 void mousePressed() {
   lvl.click();

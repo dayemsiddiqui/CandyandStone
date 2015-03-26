@@ -1,7 +1,7 @@
 class Player{
 
     String name;
-    String score;
+    int score;
     
     
 
