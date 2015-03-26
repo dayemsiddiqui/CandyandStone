@@ -15,6 +15,7 @@ class Menu{
   lvl = new Level();
   lvl.loadImages(); //loads images of themes   
   backImg = loadImage("background.png");
+  p = new Player();
   }
 
   void show(){

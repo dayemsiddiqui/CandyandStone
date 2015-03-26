@@ -1,4 +1,4 @@
-Player p = new Player();
+Player p;
 Menu menu;
 Level lvl;
 int stoneSize=25;
