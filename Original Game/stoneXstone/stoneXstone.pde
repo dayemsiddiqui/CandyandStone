@@ -1,3 +1,4 @@
+//Salik is a noob
 Player p;
 Menu menu;
 Level lvl;
