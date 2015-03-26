@@ -1,7 +1,8 @@
 class Level {
+  ArrayList Stones=new ArrayList();
   int xdimension=32;
-  int ydimension=20;
-  int NumCols = 3;
+  int ydimension=14;
+  int NumCols = 2;
   int curX, curY, target;
   int lv=0; 
   boolean playFlag, winFlag;
@@ -11,7 +12,6 @@ class Level {
 
     imageMode(CORNER);
     ellipseMode(CORNER);
-    setColor();
     setStone();
     playFlag=false;
     winFlag=false;
@@ -119,26 +119,7 @@ class Level {
 
   void replay() {
     deleteStone();
-    setColor();
     setStone();
-  }
-
-  void setColor() {
-    boolean sameCol;
-    cols= new color[NumCols];
-    for (int i=0; i<NumCols; i++) {
-      do {
-        sameCol=false;
-        cols[i]=color((int)random(255), (int)random(255), (int)random(255));
-        for (int j=i-1; j>=0; j--) {
-          if (cols[i]==cols[j]) {
-            sameCol=true;
-            break;
-          }
-        }
-      }
-      while (sameCol==true);
-    }
   }
 
   void click() {

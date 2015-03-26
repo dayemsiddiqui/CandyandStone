@@ -7,9 +7,15 @@ class Menu{
       PImage backImg;
       int temp = 0; 
 
-    Menu(){
-    backImg = loadImage("background.png");
-    }
+  Menu(){
+    //======================Startup===========================/    
+  size(640, 460); 
+  noStroke(); 
+  smooth();
+  lvl = new Level();
+  lvl.loadImages(); //loads images of themes   
+  backImg = loadImage("background.png");
+  }
 
   void show(){
     

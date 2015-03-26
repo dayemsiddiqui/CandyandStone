@@ -15,17 +15,8 @@ class Stone {
   }
 
   void display() {
-
-
-    fill(color(cols[c]));
-    //translate(x*sz, y*sz);
-
-    //ellipse(x*sz,y*sz,sz,sz);
-
     printIcon(c);
-
-    //image(eye, x*sz, y*sz, stoneSize, stoneSize); //Removed eyes
-  } 
+    } 
 
 
   boolean checkSame(int id) {
@@ -38,7 +29,6 @@ class Stone {
           oth.death=true;
           same=true;
           p.score+=1;        
-
           oth.checkSame(i);
         }
       }
