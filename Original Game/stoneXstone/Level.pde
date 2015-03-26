@@ -1,4 +1,4 @@
-class Level {
+class Level implements Display {
   ArrayList Stones=new ArrayList();
   int xdimension=32;
   int ydimension=14;
@@ -39,7 +39,7 @@ class Level {
     }
   }
 
-  void startGame() {
+  void display() {
 
     background(0);
     noStroke();

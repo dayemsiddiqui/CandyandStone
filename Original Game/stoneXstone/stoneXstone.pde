@@ -1,4 +1,5 @@
-
+Display universal;
+MainScreen main;
 Player p;
 Menu menu;
 Level lvl;

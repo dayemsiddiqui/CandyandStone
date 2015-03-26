@@ -1,7 +1,7 @@
 //This is the menu class
 //Menu should have following buttons
 class Menu {
-  PImage backImg;
+  
   int temp = 0; 
 
   Menu() {
@@ -18,18 +18,18 @@ class Menu {
 
 
     lvl = new Level();
+    main = new MainScreen();
+    universal = main;
     lvl.loadImages(); //loads images of themes   
-    backImg = loadImage("background.png");
+   
     p = new Player();
   }
 
   void show() {
     println("MouseX: "+ mouseX);
     println("MouseY: "+ mouseY);
-    if(temp == 0){
-    image(backImg, 0,0);
-    }else
-    lvl.startGame();
+  
+    universal.display();
     
     
 }
@@ -42,9 +42,17 @@ class Menu {
     return false;
   }
   
+  
+// This function determines the button which is clicked and dynamically displays the appropriate screen
   void clickEvent(){
   if (mouseCheck(360, 210, 610, 230)){
           temp = 1;
+    }
+    if(temp == 0){
+    universal = main;   
+    }
+    if(temp == 1){
+    universal = lvl;
     }
   
   }
