@@ -5,6 +5,16 @@ class Stone {
   ArrayList other;
   boolean death;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+  int dieCount=0;
+  Stone(int _x, int _y, color _c){
+    x=_x;
+    y=_y;
+    c=_c;
+    sz=10;
+  }
+>>>>>>> parent of 7ee592f... Level Class Added
   Stone(int _x, int _y,int _c, int _sz, ArrayList _other){
 =======
   int dieCount=0;
@@ -25,19 +35,50 @@ class Stone {
 <<<<<<< HEAD
  }
   
-void display(){
+void display(int curX,int curY){
   
   
   fill(color(cols[c]));
-  //translate(x*sz, y*sz);
+  translate(x*sz, y*sz);
 
-  ellipse(x*sz,y*sz,sz,sz);
+  ellipse(0,0,sz,sz);
 
+  if(death){
+  image(eyeD,0,0,szSto,szSto);      
+  }
+  else if (((int)random(1000))==1){
+      image(eyeC,0,0,szSto,szSto);
+  }
+  else if((x==curX)&&(y>curY)){
+  image(eyeT,0,0,szSto,szSto);
+  }
+  else if((x==curX)&&(y<curY)){
+  image(eyeB,0,0,szSto,szSto);
+  }
+  else if((y==curY)&&(x>curX)){
+  image(eyeL,0,0,szSto,szSto);    
+  }
+  else if((y==curY)&&(x<curX)){
+  image(eyeR,0,0,szSto,szSto);    
+  }
+  else if((y<curY)&&(x<curX)){
+  image(eyeRB,0,0,szSto,szSto);        
+  }
+  else if((y<curY)&&(x>curX)){
+  image(eyeLB,0,0,szSto,szSto);            
+  }
+  else if((y>curY)&&(x<curX)){
+  image(eyeRT,0,0,szSto,szSto);            
+  }
+  else if((y>curY)&&(x>curX)){
+  image(eyeLT,0,0,szSto,szSto);            
+  }
+  else{
+  image(eye,0,0,szSto,szSto);
+  }
 
-  image(eye,x*sz,y*sz,stoneSize,stoneSize);
   
-  
-  
+  translate(-x*sz, -y*sz);  
 } 
 =======
   }
@@ -112,8 +153,9 @@ boolean checkSame(int id){
         death=true;   
         oth.death=true;
         same=true;
-          score+=1;        
-              
+          mark+=NumCols-2;        
+        tMark+=mark;
+        
         oth.checkSame(i);
 =======
 
